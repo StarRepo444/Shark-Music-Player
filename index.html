@@ -14,7 +14,7 @@
   </head>
   <body>
     <h1>Sharks Music Player.</h1>
-    <h1>New Music Everyday.</h1>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfx5LX1fWBPj10ZvMA6upPG1HKvVG57YJxo4DUvMDRoLAY0Pg/viewform" id="open-popup">Suggest Songs</a>
 
     <div class="music-container" id="music-container">
       <div class="music-info">
@@ -42,6 +42,28 @@
       </div>
     </div>
 
+Songs are not mine. if you reccomend an song it would be addded in 2-3 days.                Current Release - 1.0.3
+    
+    
+    <script>
+    (() => {
+      let id = document.getElementById("open-popup");
+      let popupWindow = null;
+      let windowSize = 'width=800,height=500,left=560,top=290';
+
+      id.addEventListener("click", function(event){
+        let url = this.href;
+        if (popupWindow === null || popupWindow.closed) {
+          popupWindow = window.open(url, 'SuggestSongs', windowSize);
+        } else {
+          popupWindow.focus();
+        }
+        event.preventDefault();
+      });
+    })();
+    </script>
+
     <script src="script.js"></script>
   </body>
+  
 </html>
